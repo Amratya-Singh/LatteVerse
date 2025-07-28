@@ -39,6 +39,10 @@
   --site-max-width: 1300px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*Styling for whole website*/
 ul {
     list-style: none;
@@ -296,6 +300,7 @@ header .navbar {
 }
 
 .testimonials-section .testimonial {
+    user-select: none;
     display: flex;
     padding: 35px;
     text-align: center;
@@ -429,6 +434,41 @@ header .navbar {
 .contact-section .contact-form .submit-button:hover {
     color: var(--color-primary);
     background: transparent;
+}
+
+/* Footer section styling */
+.footer-section {
+    padding: 20px;
+    background: var(--color-dark);
+}
+
+.footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text, .social-link, .policy-link) {
+    color: var(--color-white);
+    transition: 0.2s ease;
+}
+
+.footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-section .social-link-list .social-link {
+    font-size: var(--font-size-l);
+}
+
+.footer-section .social-link-list .social-link:hover, .footer-section .polict-text .policy-link:hover {
+    color: var(--color-secondary);
+}
+
+.footer-section .polict-text .separator {
+    margin: 0 5px;
+    color: var(--color-white);
 }
 
 /* Responsive media query cide for max width 1024px */
@@ -578,5 +618,10 @@ header .navbar {
 
     .testimonials-section .swiper-slide-button {
         display: none;
+    }
+
+    .footer-section .section-content {
+        flex-direction: column;
+        gap: 20px;
     }
 }
